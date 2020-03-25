@@ -13,11 +13,19 @@ hello world
     } )
   }
 
-  function showInfo(data, tabletop) {
-    alert('Successfully processed!')
-    console.log(data);
-  }
+function showInfo(data) {
+  var html = "<tr>";
+		
+  // double for-loops to do rows, cells in a table
+	for ( i = 0; i < data.length; i++ ) {
+			for ( prop in data[i] ) {
+					html += "<td>" + data[i][prop] + "</td>";
+    	}
+			html += "</tr><tr>";
+	}
+	document.getElementById("New cases").innerHTML = html;
 
+}
 
   window.addEventListener('DOMContentLoaded', init)
 </script>
