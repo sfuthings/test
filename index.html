@@ -6,6 +6,13 @@ hello world
 <script type='text/javascript'>    
   var publicSpreadsheetUrl = 'https://docs.google.com/spreadsheets/d/1bsXB7KDTyL5VY3XSfZYvKU5-6uXBq7x0U-95kiENBrk/edit?usp=sharing';
 
+  function init() {
+    Tabletop.init( {
+      key: publicSpreadsheetUrl,
+      callback: showInfo,
+      simpleSheet: true 
+    } )
+  }
 	
 	function showInfo(data, tabletop) {
   data.forEach(function(data) {
@@ -31,15 +38,8 @@ hello world
  });
 		console.log(data);
 	}
-/*  function init() {
-    Tabletop.init( {
-      key: publicSpreadsheetUrl,
-      callback: showInfo,
-      simpleSheet: true 
-    } )
-  }
 
-function showInfo(data) {
+/* function showInfo(data) {
   var html = "<tr>";
 		
   // double for-loops to do rows, cells in a table
